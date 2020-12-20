@@ -14,20 +14,20 @@ class Book:
     bookList = []
 
     def __init__(self):
-        name = input('Name: ')
-        year = str(input('Year: '))
-        publisher = input('Publisher: ')
-        genre = str(input('Genre: '))
-        autor = input('Autor: ')
-        cost = str(input('Cost: '))
+        self.name = input('Name: ')
+        self.year = str(input('Year: '))
+        self.publisher = input('Publisher: ')
+        self.genre = str(input('Genre: '))
+        self.autor = input('Autor: ')
+        self.cost = str(input('Cost: '))
 
         self.bookProp = {
-            'name': name,
-            'year': year,
-            'publisher': publisher,
-            'genre': genre,
-            'autor': autor,
-            'cost': cost,
+            'name': self.name,
+            'year': self.year,
+            'publisher': self.publisher,
+            'genre': self.genre,
+            'autor': self.autor,
+            'cost': self.cost,
         }
 
         Book.bookList.append(self.bookProp)

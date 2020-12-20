@@ -10,20 +10,20 @@ class Auto:
     carList = []
 
     def __init__(self):
-        name = input('Name: ')
-        year = str(input('Year: '))
-        vendor = input('Vendor: ')
-        value = str(input('Value of engine: '))
-        color = input('Color: ')
-        cost = str(input('Cost: '))
+        self.name = input('Name: ')
+        self.year = str(input('Year: '))
+        self.vendor = input('Vendor: ')
+        self.value = str(input('Value of engine: '))
+        self.color = input('Color: ')
+        self.cost = str(input('Cost: '))
 
         self.carProp = {
-            'name': name,
-            'year': year,
-            'vendor': vendor,
-            'value': value,
-            'color': color,
-            'cost': cost,
+            'name': self.name,
+            'year': self.year,
+            'vendor': self.vendor,
+            'value': self.value,
+            'color': self.color,
+            'cost': self.cost,
         }
 
         Auto.carList.append(self.carProp)
