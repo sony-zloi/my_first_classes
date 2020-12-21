@@ -53,9 +53,9 @@ class Book:
                          '6 - Цену: \n'
                          '> '))
         for element in Book.bookList:
-            for keys, genres in element.items():
+            for keys, values in element.items():
                 if keys == propChoose[prop - 1]:
-                    print(keys + ": " + genres)
+                    print(keys + ": " + values)
 
 
 def userEnter():

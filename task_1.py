@@ -39,7 +39,7 @@ class Auto:
 
     @staticmethod
     def getProp():
-        propChoose = ['name', 'year', 'vendor', 'value', 'color', 'cost']
+        propChoose = ('name', 'year', 'vendor', 'value', 'color', 'cost')
         prop = int(input('Какой из параметров вывести на экран:\n'
                          '1 - Имя: \n'
                          '2 - Год: \n'
