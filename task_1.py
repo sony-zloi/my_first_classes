@@ -8,6 +8,7 @@
 
 class Auto:
     carList = []
+    counter = 1
 
     def __init__(self):
         self.name = input('Name: ')
@@ -27,6 +28,7 @@ class Auto:
         }
 
         Auto.carList.append(self.carProp)
+        Auto.counter += 1
 
     @staticmethod
     def showData():
@@ -63,14 +65,12 @@ def userEnter():
                   '> ')
     return enter
 
-counter = 0
 
 while True:
     enter = userEnter()
 
     if enter == '1':
-        counter += 1
-        nameOfObj = 'car' + str(counter)
+        nameOfObj = 'car_' + str(Auto.counter)
         print(f'Введите параметры автомобиля {nameOfObj} :')
         nameOfObj = Auto()
     elif enter == '2':
