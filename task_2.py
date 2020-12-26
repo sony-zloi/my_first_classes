@@ -1,88 +1,76 @@
-'''
-Задание 2
-Реализуйте класс «Книга». Необходимо хранить в полях класса:
-- название книги
-- год выпуска
-- издателя,
-- жанр
-- автора,
-- цену
-Реализуйте методы класса для ввода данных, вывода данных, реализуйте доступ к отдельным полям через методы класса.
-'''
-
 class Book:
-    bookList = []
+    """
+    Задание 2
+    Реализуйте класс «Книга». Необходимо хранить в полях класса:
+    - название книги
+    - год выпуска
+    - издателя,
+    - жанр
+    - автора,
+    - цену
+    Реализуйте методы класса для ввода данных, вывода данных, реализуйте доступ к отдельным полям через методы класса.
+    """
 
     def __init__(self):
         self.name = input('Name: ')
         self.year = str(input('Year: '))
         self.publisher = input('Publisher: ')
-        self.genre = str(input('Genre: '))
-        self.autor = input('Autor: ')
+        self.genre = input('Genre: ')
+        self.author = input('Author: ')
         self.cost = str(input('Cost: '))
 
-        self.bookProp = {
-            'name': self.name,
-            'year': self.year,
-            'publisher': self.publisher,
-            'genre': self.genre,
-            'autor': self.autor,
-            'cost': self.cost,
-        }
+    def __repr__(self):
+        return f'name: {self.name} year: {self.year} publisher: {self.publisher} genre: {self.genre} ' \
+               f'author: {self.author} cost: {self.cost}'
 
-        Book.bookList.append(self.bookProp)
+    def __str__(self):
+        return f'name: {self.name} year: {self.year} publisher: {self.publisher} genre: {self.genre} ' \
+               f'author: {self.author} cost: {self.cost} '
 
-    @staticmethod
-    def showData():
-        print('Перечень автомобилей и их свойства: ')
-        for element in Book.bookList:
-            for keys, values in element.items():
-                print(keys + ": " + values)
-            print('------------')
-        print()
+    def getName(self):
+        return self.name
 
-    @staticmethod
-    def getProp():
-        propChoose = ['name', 'year', 'publisher', 'genre', 'autor', 'cost']
-        prop = int(input('Какой из параметров вывести на экран:\n'
-                         '1 - Имя: \n'
-                         '2 - Год: \n'
-                         '3 - Издателя: \n'
-                         '4 - Жанр: \n'
-                         '5 - Автор: \n'
-                         '6 - Цену: \n'
-                         '> '))
-        for element in Book.bookList:
-            for keys, values in element.items():
-                if keys == propChoose[prop - 1]:
-                    print(keys + ": " + values)
+    def setName(self, value):
+        if not value:
+            raise ValueError
+        self.name = value
 
+    def getYear(self):
+        return self.year
 
-def userEnter():
-    enter = input('Имеется класс \"Книги\" \n'
-                  'Для ввода книги нажмите - 1: \n'
-                  'Для вывода списка книг нажмите - 2: \n'
-                  'Для вывода отдельных параметров книг нажмите -  3: \n'
-                  'Для выхода нажмите любую другую клавишу:\n'
-                  '> ')
-    return enter
+    def setYear(self, value):
+        if not value:
+            raise ValueError
+        self.year = value
 
-counter = 0
+    def getPublisher(self):
+        return self.publisher
 
-while True:
-    enter = userEnter()
+    def setPublisher(self, value):
+        if not value:
+            raise ValueError
+        self.publisher = value
 
-    if enter == '1':
-        counter += 1
-        nameOfObj = 'book' + str(counter)
-        print(f'Введите параметры книги {nameOfObj} :')
-        nameOfObj = Book()
-    elif enter == '2':
-        Book.showData()
-    elif enter == '3':
-        Book.getProp()
-    else:
-        break
+    def getGenre(self):
+        return self.genre
 
-print('Bye!')
+    def setGenre(self, value):
+        if not value:
+            raise ValueError
+        self.genre = value
 
+    def getAuthor(self):
+        return self.author
+
+    def setAuthor(self, value):
+        if not value:
+            raise ValueError
+        self.author = value
+
+    def getCost(self):
+        return self.cost
+
+    def setCost(self, value):
+        if not value:
+            raise ValueError
+        self.cost = value

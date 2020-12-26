@@ -60,7 +60,7 @@ class Car:
     def setColor(self, value):
         if not value:
             raise ValueError
-        self.cost = value
+        self.color = value
 
     def getCost(self):
         return self.cost

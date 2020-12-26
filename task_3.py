@@ -1,17 +1,14 @@
-'''
-Задание 3
-Реализуйте класс «Стадион». Необходимо хранить в полях класса:
-- название стадиона,
-- дату открытия,
-- страну,
-- город,
-- вместимость.
-Реализуйте методы класса для ввода данных, вывода данных, реализуйте доступ к отдельным полям через методы класса.
-'''
-
-
 class Stadium:
-    stadiumList = []
+    """
+    Задание 3
+    Реализуйте класс «Стадион». Необходимо хранить в полях класса:
+    - название стадиона,
+    - дату открытия,
+    - страну,
+    - город,
+    - вместимость.
+    Реализуйте методы класса для ввода данных, вывода данных, реализуйте доступ к отдельным полям через методы класса.
+    """
 
     def __init__(self):
         self.name = input('Name: ')
@@ -19,66 +16,57 @@ class Stadium:
         self.country = input('country: ')
         self.city = input('city: ')
         self.capacity = str(input('capacity: '))
+    
+    def __repr__(self):
+        return f'name: {self.name} year: {self.year} country: {self.country} city: {self.city} ' \
+               f'capacity: {self.capacity}'
 
-        self.stadiumProp = {
-            'name': self.name,
-            'year': self.year,
-            'country': self.country,
-            'city': self.city,
-            'capacity': self.capacity,
-        }
+    def __str__(self):
+        return f'name: {self.name} year: {self.year} country: {self.country} city: {self.city} ' \
+               f'capacity: {self.capacity} '
 
-        Stadium.stadiumList.append(self.stadiumProp)
+    def getName(self):
+        return self.name
 
-    @staticmethod
-    def showData():
-        print('Перечень стадионов и их свойства: ')
-        for element in Stadium.stadiumList:
-            for keys, values in element.items():
-                print(keys + ": " + values)
-            print('------------')
-        print()
+    def setName(self, value):
+        if not value:
+            raise ValueError
+        self.name = value
 
-    @staticmethod
-    def getProp():
-        propChoose = ['name', 'year', 'country', 'city', 'capacity']
-        prop = int(input('Какой из параметров вывести на экран:\n'
-                         '1 - Имя: \n'
-                         '2 - Год: \n'
-                         '3 - Страну: \n'
-                         '4 - Город: \n'
-                         '5 - Вместимость: \n'
-                         '> '))
-        for element in Stadium.stadiumList:
-            for keys, values in element.items():
-                if keys == propChoose[prop - 1]:
-                    print(keys + ": " + values)
+    def getYear(self):
+        return self.year
 
+    def setYear(self, value):
+        if not value:
+            raise ValueError
+        self.year = value
 
-def userEnter():
-    enter = input('Имеется класс \"Cтадионы\" \n'
-                  'Для ввода стадиона нажмите - 1: \n'
-                  'Для вывода списка стадионов нажмите - 2: \n'
-                  'Для вывода отдельных параметров стадиона нажмите -  3: \n'
-                  'Для выхода нажмите любую другую клавишу:\n'
-                  '> ')
-    return enter
+    def getCountry(self):
+        return self.country
 
-counter = 0
+    def setCountry(self, value):
+        if not value:
+            raise ValueError
+        self.country = value
 
-while True:
-    enter = userEnter()
+    def getCity(self):
+        return self.city
 
-    if enter == '1':
-        counter += 1
-        nameOfObj = 'stadium' + str(counter)
-        print(f'Введите параметры стадиона {nameOfObj} :')
-        nameOfObj = Stadium()
-    elif enter == '2':
-        Stadium.showData()
-    elif enter == '3':
-        Stadium.getProp()
-    else:
-        break
+    def setCity(self, value):
+        if not value:
+            raise ValueError
+        self.city = value
 
-print('Bye!')
+    def getCapacity(self):
+        return self.capacity
+
+    def setCapacity(self, value):
+        if not value:
+            raise ValueError
+        self.capacity = value
+
+stad1 = Stadium()
+
+print(stad1)
+stad1.setCapacity(90)
+print(stad1)
