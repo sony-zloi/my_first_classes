@@ -14,8 +14,13 @@ class Car:
         self.color = input('Color: ')
         self.cost = str(input('Cost: '))
 
-    def __prep__(self):
-        return f'name: {self.name} \nyear: {self.year}'
+    def __repr__(self):
+        return f'name: {self.name} year: {self.year} vendor: {self.vendor} power: {self.power} color: {self.color} ' \
+               f'cost: {self.cost}'
+
+    def __str__(self):
+        return f'name: {self.name} year: {self.year} vendor: {self.vendor} power: {self.power} color: {self.color} ' \
+               f'cost: {self.cost} '
 
     def getName(self):
         return self.name
@@ -65,7 +70,4 @@ class Car:
             raise ValueError
         self.cost = value
 
-
-carListObj = CarMgmt()
-carObj = Car()
-carObj.getCar()
+car1 = Car()
