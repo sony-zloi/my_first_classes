@@ -1,83 +1,71 @@
-'''
-Задание 1
-Реализуйте класс «Автомобиль». Необходимо хранить
-в полях класса: название модели, год выпуска, производителя, объем двигателя, цвет машины, цену. Реализуйте
-методы класса для ввода данных, вывода данных, реализуйте доступ к отдельным полям через методы класса.
-'''
-
-
-class Auto:
-    carList = []
-    counter = 1
+class Car:
+    """
+    Задание 1
+    Реализуйте класс «Автомобиль». Необходимо хранить
+    в полях класса: название модели, год выпуска, производителя, объем двигателя, цвет машины, цену. Реализуйте
+    методы класса для ввода данных, вывода данных, реализуйте доступ к отдельным полям через методы класса.
+    """
 
     def __init__(self):
         self.name = input('Name: ')
         self.year = str(input('Year: '))
         self.vendor = input('Vendor: ')
-        self.value = str(input('Value of engine: '))
+        self.power = str(input('Power of engine: '))
         self.color = input('Color: ')
         self.cost = str(input('Cost: '))
 
-        self.carProp = {
-            'name': self.name,
-            'year': self.year,
-            'vendor': self.vendor,
-            'value': self.value,
-            'color': self.color,
-            'cost': self.cost,
-        }
+    def __prep__(self):
+        return f'name: {self.name} \nyear: {self.year}'
 
-        Auto.carList.append(self.carProp)
-        Auto.counter += 1
+    def getName(self):
+        return self.name
 
-    @staticmethod
-    def showData():
-        print('Перечень автомобилей и их свойства: ')
-        for element in Auto.carList:
-            for keys, values in element.items():
-                print(keys + ": " + values)
-            print('------------')
-        print()
+    def setName(self, value):
+        if not value:
+            raise ValueError
+        self.name = value
 
-    @staticmethod
-    def getProp():
-        propChoose = ('name', 'year', 'vendor', 'value', 'color', 'cost')
-        prop = int(input('Какой из параметров вывести на экран:\n'
-                         '1 - Имя: \n'
-                         '2 - Год: \n'
-                         '3 - Произодителя: \n'
-                         '4 - Объем двигателя: \n'
-                         '5 - Цвет: \n'
-                         '6 - Цену: \n'
-                         '> '))
-        for element in Auto.carList:
-            for keys, values in element.items():
-                if keys == propChoose[prop - 1]:
-                    print(keys + ": " + values)
+    def getYear(self):
+        return self.year
+
+    def setYear(self, value):
+        if not value:
+            raise ValueError
+        self.year = value
+
+    def getVendor(self):
+        return self.vendor
+
+    def setVendor(self, value):
+        if not value:
+            raise ValueError
+        self.vendor = value
+
+    def getPower(self):
+        return self.power
+
+    def setPower(self, value):
+        if not value:
+            raise ValueError
+        self.power = value
+
+    def getColor(self):
+        return self.color
+
+    def setColor(self, value):
+        if not value:
+            raise ValueError
+        self.cost = value
+
+    def getCost(self):
+        return self.cost
+
+    def setCost(self, value):
+        if not value:
+            raise ValueError
+        self.cost = value
 
 
-def userEnter():
-    enter = input('Имеется класс \"Автомобиль\" \n'
-                  'Для ввода нажмите 1: \n'
-                  'Для вывода нажмите 2: \n'
-                  'Для вывода отдельных свойств нажмите 3: \n'
-                  'Для выхода нажмите любую другую клавишу:\n'
-                  '> ')
-    return enter
-
-
-while True:
-    enter = userEnter()
-
-    if enter == '1':
-        nameOfObj = 'car_' + str(Auto.counter)
-        print(f'Введите параметры автомобиля {nameOfObj} :')
-        nameOfObj = Auto()
-    elif enter == '2':
-        Auto.showData()
-    elif enter == '3':
-        Auto.getProp()
-    else:
-        break
-
-print('Bye!')
+carListObj = CarMgmt()
+carObj = Car()
+carObj.getCar()
