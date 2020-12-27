@@ -17,13 +17,6 @@ class Stadium:
         self.city = input('city: ')
         self.capacity = str(input('capacity: '))
     
-    def __repr__(self):
-        return f'name: {self.name} year: {self.year} country: {self.country} city: {self.city} ' \
-               f'capacity: {self.capacity}'
-
-    def __str__(self):
-        return f'name: {self.name} year: {self.year} country: {self.country} city: {self.city} ' \
-               f'capacity: {self.capacity} '
 
     def getName(self):
         return self.name

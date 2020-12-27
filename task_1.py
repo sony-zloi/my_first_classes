@@ -14,14 +14,6 @@ class Car:
         self.color = input('Color: ')
         self.cost = str(input('Cost: '))
 
-    def __repr__(self):
-        return f'name: {self.name} year: {self.year} vendor: {self.vendor} power: {self.power} color: {self.color} ' \
-               f'cost: {self.cost}'
-
-    def __str__(self):
-        return f'name: {self.name} year: {self.year} vendor: {self.vendor} power: {self.power} color: {self.color} ' \
-               f'cost: {self.cost} '
-
     def getName(self):
         return self.name
 

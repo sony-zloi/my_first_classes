@@ -19,14 +19,6 @@ class Book:
         self.author = input('Author: ')
         self.cost = str(input('Cost: '))
 
-    def __repr__(self):
-        return f'name: {self.name} year: {self.year} publisher: {self.publisher} genre: {self.genre} ' \
-               f'author: {self.author} cost: {self.cost}'
-
-    def __str__(self):
-        return f'name: {self.name} year: {self.year} publisher: {self.publisher} genre: {self.genre} ' \
-               f'author: {self.author} cost: {self.cost} '
-
     def getName(self):
         return self.name
 
